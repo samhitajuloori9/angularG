@@ -1,0 +1,44 @@
+<p>emplist works!</p>
+<table border="3">
+    <tr>
+        <th>EmployeeId</th>
+        <th>FullName</th>
+        <th>Email</th>
+        <th>PhoneNo</th>
+        <th>DateOfJoining</th>
+        <th>Department</th>
+        <th>LeaveBalance</th>
+        <th>ManagerId</th>
+    </tr>
+    <tr *ngFor="let e of emp | async ">
+        <td>
+            {{e.empId}}
+        </td>
+        <td>
+            {{e.fullName}}
+        </td>
+        <td>
+            {{e.email}}
+        </td>
+        <td>
+            {{e.phoneNumber}}
+        </td>
+        <td>
+            {{e.dateOfJoining}}
+        </td>
+        <td>
+            {{e.department}}
+        </td>
+        <td>
+            {{e.leaveBalance}}
+        </td>
+        <td>
+            {{e.managerId}}
+        </td>
+        <td>
+            <input type="button" value="login" 
+            (click)="login(e.empId, e.fullName,e.managerId)" />
+        </td>
+    </tr>
+</table> 
+<router-outlet></router-outlet>
